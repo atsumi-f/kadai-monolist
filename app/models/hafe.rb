@@ -1,0 +1,2 @@
+class Hafe < Ownership
+end

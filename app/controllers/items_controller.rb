@@ -21,6 +21,7 @@ before_action :require_user_logged_in
     def show
     @item = Item.find(params[:id])
     @want_users = @item.want_users
+    @hafe_users = @item.hafe_users
     end
   end
   
