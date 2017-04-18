@@ -13,9 +13,14 @@ before_action :require_user_logged_in
       })
       
       results.each do |result|
-        item = Item.new(read(result))
+        item = Item.find_or_initialize_by(read(result))
         @items << item
       end
+    end
+    
+    def show
+    @item = Item.find(params[:id])
+    @want_users = @item.want_users
     end
   end
   
